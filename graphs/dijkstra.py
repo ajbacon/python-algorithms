@@ -1,13 +1,44 @@
 from weighted_graph import WeightedGraph
+import math
 
 
-def dijkstra_1(graph, start, end):
-    pass
+def dijkstra_1(graph, start):
+    costs = {}
+    parents = {}
+    visited = [start]
+    for k in graph.get_edges().keys():
+        costs[k] = math.inf
+        parents[k] = None
+    costs[start] = 0
+    for n in g.get_edges()[start]:
+        costs[n[0]] = n[1]
+        parents[n[0]] = start
+
+    node = lowest_cost_node(costs, visited)
+
+    while not node == None:
+        visited.append(node)
+        cost = costs[node]
+        for n in g.get_edges()[node]:
+            new_cost = cost + n[1]
+            if new_cost < costs[n[0]]:
+                costs[n[0]] = new_cost
+                parents[n[0]] = node
+
+        node = lowest_cost_node(costs, visited)
+
+    print(costs)
 
 
-def find_next_node():
-    pass
-
+def lowest_cost_node(costs, visited):
+    lowest_cost = math.inf
+    lowest_cost_node = None
+    for node in costs:
+        cost = costs[node]
+        if node not in visited and cost < lowest_cost:
+            lowest_cost = cost
+            lowest_cost_node = node
+    return lowest_cost_node
 
 
 g = WeightedGraph()
@@ -29,6 +60,5 @@ g.add_edge('D', 'E', 6)
 g.add_edge('D', 'F', 3)
 g.add_edge('E', 'F', 1)
 
-print(g.get_edges())
 
-# dijkstra_1(example_graph, 'A')
+dijkstra_1(g, 'A')
