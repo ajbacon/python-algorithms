@@ -1,22 +1,13 @@
-from collections import deque
+from weighted_graph import WeightedGraph
 
 
-# def dijkstra_1(graph, start):
+def dijkstra_1(graph, start, end):
+    pass
 
-class WeightedGraph:
-    def __init__(self):
-        self.edges = {}
 
-    def add_node(self, node):
-        self.edges[node] = []
+def find_next_node():
+    pass
 
-    def add_edge(self, node_a, node_b, weight):
-        self.edges[node_a].append((node_b, weight))
-        self.edges[node_b].append((node_a, weight))
-        return self.edges
-
-    def get_edges(self):
-        return self.edges
 
 
 g = WeightedGraph()
