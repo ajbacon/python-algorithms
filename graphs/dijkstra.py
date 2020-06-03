@@ -3,14 +3,16 @@ import math
 
 
 def dijkstra_1(graph, start):
+    neighbours = graph.get_edges()
     costs = {}
     parents = {}
     visited = [start]
-    for k in graph.get_edges().keys():
+    for k in neighbours.keys():
         costs[k] = math.inf
         parents[k] = None
     costs[start] = 0
-    for n in g.get_edges()[start]:
+
+    for n in neighbours[start]:
         costs[n[0]] = n[1]
         parents[n[0]] = start
 
@@ -28,6 +30,7 @@ def dijkstra_1(graph, start):
         node = lowest_cost_node(costs, visited)
 
     print(costs)
+    print(parents)
 
 
 def lowest_cost_node(costs, visited):
