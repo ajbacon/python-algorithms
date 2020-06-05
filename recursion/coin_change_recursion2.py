@@ -17,6 +17,6 @@ def count(S, m, n):
     return count(S, m, n - S[m - 1]) + count(S, m - 1, n)
 
 
-arr = [1, 2, 3]
+arr = [1, 2]
 m = len(arr)
 print(count(arr, m, 5))
