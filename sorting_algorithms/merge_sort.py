@@ -18,13 +18,9 @@ def merge_sort_rec(A, first, last):
 def merge(A, first, middle, last):
     L = A[first:middle + 1]
     R = A[middle + 1:last + 1]
-    # L.append(9999999999)
-    # R.append(9999999999)
 
-    i = 0
-    j = 0
-    i_max = len(L)
-    j_max = len(R)
+    i, i_max = 0, len(L)
+    j, j_max = 0, len(R)
 
     for k in range(first, last + 1):
         if i == i_max:
@@ -40,6 +36,8 @@ def merge(A, first, middle, last):
             A[k] = R[j]
             j += 1
 
+
+# ------------------------------TESTING-------------------------------------
 
 class MergeSort(unittest.TestCase):
 
@@ -62,9 +60,16 @@ class MergeSort(unittest.TestCase):
         self.assertEqual(res, [1, 2, 3])
 
     def test_20el_shuffled_array(self):
-        """it should sort an array of 3 elements"""
+        """it should sort an array of 20 elements"""
         res = merge_sort([2, 11, 17, 16, 14, 19, 15, 9, 12,
                           5, 1, 18, 4, 20, 7, 3, 8, 10, 13, 6])
+        self.assertEqual(res, [1, 2, 3, 4, 5, 6, 7, 8, 9,
+                               10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+
+    def test_20el_sorted_array(self):
+        """it should return the correct array for an already shuffled array"""
+        res = merge_sort([1, 2, 3, 4, 5, 6, 7, 8, 9,
+                          10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
         self.assertEqual(res, [1, 2, 3, 4, 5, 6, 7, 8, 9,
                                10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
 
