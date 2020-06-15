@@ -22,6 +22,8 @@ def num_subsets(arr, m, sum):
     return num_subsets(arr, m - 1, sum) + num_subsets(arr, m - 1, sum - arr[m - 1])
 
 
+# ------------------------------TESTING-------------------------------------
+
 class MergeSort(unittest.TestCase):
 
     def setUp(self):
