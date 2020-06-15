@@ -1,3 +1,5 @@
+# NOT COMPLETE
+
 def can_partition(arr, k):
     sum_arr = sum(arr)
     print(sum_arr)
