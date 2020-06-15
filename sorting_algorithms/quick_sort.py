@@ -1,3 +1,5 @@
+# NOT COMPLETE
+
 def quicksort(arr, left, right):
 
     if len(arr) > 1:
@@ -34,7 +36,40 @@ def get_pivot(arr, left, right):
     return i
 
 
-res = quicksort([2], 0, 0)
-print(res, res == [2])
-res = quicksort([3, 2, 1], 0, 1)
-print(res, res == [1, 2])
+class QuickSort(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def test_one_element_input(self):
+        """it should return the same arr when only one element is input"""
+        res = merge_sort([1])
+        self.assertEqual(res, [1])
+
+    def test_two_element_input(self):
+        """it should sort an array of 2 elements"""
+        res = merge_sort([2, 1])
+        self.assertEqual(res, [1, 2])
+
+    def test_three_element_input(self):
+        """it should sort an array of 3 elements"""
+        res = merge_sort([2, 1, 3])
+        self.assertEqual(res, [1, 2, 3])
+
+    def test_20el_shuffled_array(self):
+        """it should sort an array of 20 elements"""
+        res = merge_sort([2, 11, 17, 16, 14, 19, 15, 9, 12,
+                          5, 1, 18, 4, 20, 7, 3, 8, 10, 13, 6])
+        self.assertEqual(res, [1, 2, 3, 4, 5, 6, 7, 8, 9,
+                               10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+
+    def test_20el_sorted_array(self):
+        """it should return the correct array for an already shuffled array"""
+        res = merge_sort([1, 2, 3, 4, 5, 6, 7, 8, 9,
+                          10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+        self.assertEqual(res, [1, 2, 3, 4, 5, 6, 7, 8, 9,
+                               10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
+
+
+if __name__ == '__main__':
+    unittest.main()
