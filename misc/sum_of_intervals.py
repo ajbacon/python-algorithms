@@ -1,3 +1,5 @@
+# codewars kata: https://www.codewars.com/kata/sum-of-intervals/python
+
 def sum_of_intervals(intervals):
     intervals.sort()
     length = len(intervals)
@@ -21,8 +23,34 @@ def sum_of_intervals(intervals):
 
     return sum
 
+# Complexity
+# ----------
+# sort method used, this runs at time O(nlogn)
+# then intervals and new_arr looped over once each, both @ O(n)
+# Hence, overall complexity O(nlogn)
 
-# tests
+
+# new_arr holds output at space O(n)
+# hence overall space complexity O(n)
+
+
+# ------------------------------TESTING-------------------------------------
+import unittest
+
+
+class CoinChange(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def test_simple_1_denomination_sum1(self):
+        """it should return 1 given denominations of [1] and target of 1"""
+        denoms = [1]
+        target = 1
+        res = change(denoms, len(denoms), target)
+        self.assertEqual(res, 1)
+
+
 intervals = [
     (1, 4)
 ]
