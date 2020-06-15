@@ -27,7 +27,7 @@ def change(S, m, n):
 import unittest
 
 
-class MergeSort(unittest.TestCase):
+class CoinChange(unittest.TestCase):
 
     def setUp(self):
         pass
