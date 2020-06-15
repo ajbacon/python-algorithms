@@ -35,6 +35,8 @@ def get_pivot(arr, left, right):
 
     return i
 
+# ------------------------------TESTING-------------------------------------
+
 
 class QuickSort(unittest.TestCase):
 
