@@ -1,3 +1,7 @@
+# codewars kata: https://www.codewars.com/kata/54eb33e5bc1a25440d000891
+
+
+# ------------------------initial attempt----------------------------
 import math
 
 
@@ -31,6 +35,9 @@ def square_into_squares_rec(current_sum, current_square, square_vals):
     return False
 
 
+# ----------------updated attempt----------------------
+
+
 def decompose(n):
     target = 0
     stack = [n]
@@ -52,10 +59,19 @@ print(square_into_squares(5))
 
 print(decompose(5))
 
-
-# def test(num):
-#     x = int(math.sqrt(num))
-#     print(x)
+# ------------------------------TESTING-------------------------------------
+import unittest
 
 
-# test(17)
+class SquareIntoSquares(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    # def test_one_interval(self):
+    #     """it should return 3 given one interval of [(1,4)]"""
+    #     intervals = [
+    #         (1, 4)
+    #     ]
+    #     res = sum_of_intervals(intervals)
+    #     self.assertEqual(res, 3)
