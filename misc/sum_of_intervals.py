@@ -40,7 +40,7 @@ def sum_of_intervals(intervals):
 import unittest
 
 
-class CoinChange(unittest.TestCase):
+class SumOfIntervals(unittest.TestCase):
 
     def setUp(self):
         pass
